@@ -33,7 +33,7 @@ class HomeController extends Controller {
 		// const result = await ctx.service.user.findall();
 
 		//条件查询
-		const result = await ctx.service.user.findselect();
+		const result = await this.service.user.findselect();
 		console.log( result)
 
 		ctx.body = result ;

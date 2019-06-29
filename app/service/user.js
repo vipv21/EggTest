@@ -22,12 +22,19 @@ class UserService extends Service {
 
     //条件查询
     async findselect(){
-        const result = await this.app.mysql.select('el_user',{
-            where: { phone: '17770859713' }, // WHERE 条件
-            columns: ['phone'], // 要查询的表字段
-            limit: 100, // 返回数据量
-            offset: 0, // 数据偏移量
-        })
+        // const result = await this.app.mysql.select('el_user',{
+        //     where: { phone: {'$ne': ''} }, // WHERE 条件
+        //     columns: ['phone'], // 要查询的表字段
+        //     limit: 100, // 返回数据量
+        //     offset: 0, // 数据偏移量
+        // })
+
+        const result = await this.ctx.model.User.findAll();
+        // console.log(result);
+
+
+
+
         return {result}
     }
 

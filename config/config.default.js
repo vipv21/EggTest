@@ -39,7 +39,20 @@ module.exports = appInfo => {
 		agent: false,
 	}
 
+	//配置sequelize
+	config.sequelize = {
+		dialect:'mysql',
+		host:'127.0.0.1',
+		port: 3306 ,
+		database: 'eggtest' , //数据库名
+		// 数据库连接的用户和密码
+		username: 'root',
+		password: '123456',
+		
+		underscored: true,
+		timezone: '+08:00',
 
+	}
 
 
 	
